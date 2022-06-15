@@ -18,7 +18,7 @@ This example uses `docker-compose` to handle container starting, stopping, and d
 - modify or add something `../content/web_development`
 - refresh the web page
 
-- `ctrl d` to stop `docker-compose`
+- `ctrl c` to stop `docker-compose`
 - `docker ps -a` to list the containers and notice that `docker-compose` cleaned-up for us.
 
 ## Now run the following to run docker compose `detached`
