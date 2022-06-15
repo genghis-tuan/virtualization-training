@@ -1,0 +1,10 @@
+---
+services:
+  web-server: # we can name this anything we want
+    image: "nginx:1.21"
+    ports:
+      - "8080:80" # we can define the published ports however we want
+    container_name: "nginx-development" # we can name the container whatever we want
+    volumes:
+    - "./web_development:/usr/share/nginx/html" # we can define the volumes however we want
+    restart: always

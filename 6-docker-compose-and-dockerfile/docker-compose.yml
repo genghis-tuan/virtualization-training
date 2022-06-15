@@ -1,0 +1,56 @@
+---
+services:
+  web-content: # we get the web content that was baked into the image
+    # This step will build the image if it does not exist
+    build:
+      context: .
+      args:
+        INITIAL_CONTENT: "set from the docker-compose file"
+    image: "nginx-dev:v1"
+    ports:
+      - "8888:80"
+    container_name: "nginx-content"
+    restart: always
+    environment:
+      TOMATO_PRICE: 100.43
+    # Notice that we can use a file to override environment variables like this
+    env_file:
+      - web-content-variables.env # enter the container and run `printenv` to test
+
+  web-dev: # this gives us the web content that we write.
+    # This will use the image that we built above
+    image: nginx-dev:v1
+    ports:
+      - "9999:80"
+    container_name: "nginx-development"
+    volumes:
+      - "./web_development:/usr/share/nginx/html"
+    restart: always
+    depends_on:
+    - web-content
+
+  db:
+    image: mysql:8.0-oracle
+    ports:
+      - "3306:3306"
+    container_name: "mysql-development"
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: "root" # In real life we would NOT store secrets here
+      MYSQL_DATABASE: "dev_db"
+      MYSQL_USER: "dev_user"
+      MYSQL_PASSWORD: "dev_pass" # In real life we would NOT store secrets here
+    restart: always
+
+  queue:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+    restart: always
+
+  backend:
+    image: ubuntu:20.04
+    container_name: "backend_server"
+    # this infiniite loop is fake work that will keep the container running.
+    # if it was just a simple statement that terminated, the process would end and the container would stop.
+    command: bash -c "while [[ true ]]; do sleep 5; done"
