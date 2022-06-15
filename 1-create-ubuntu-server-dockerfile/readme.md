@@ -25,7 +25,7 @@ docker build -t myubuntu:v1 .
 docker images | grep myubuntu
 ```
 
-- If the image is listed, then you've successfully create a image.
+- If the image is listed, then you've successfully created a image.
 
 - Test the image by creating a container:
 

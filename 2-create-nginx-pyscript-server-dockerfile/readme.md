@@ -22,7 +22,7 @@ docker build -t pyscript:v1 .
 docker images | grep pyscript
 ```
 
-- The image should be present. You've successfully create a image.
+- The image should be present. You've successfully created a image.
 
 - Test the image by creating a container that runs interactively (the logs show in the terminal):
 

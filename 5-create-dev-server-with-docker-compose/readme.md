@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 # Create an Nginx Web Server To Test Your Web Code
 
 This example uses `docker-compose` to handle container starting, stopping, and destroying

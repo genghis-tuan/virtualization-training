@@ -26,7 +26,7 @@ docker build -t mynginx:v1 .
 docker images | grep mynginx
 ```
 
-- The image should be present. You've successfully create a image.
+- The image should be present. You've successfully created a image.
 
 - Run the container detached and mount the `web_development` directory to `/usr/share/nginx/html/`:
 - We pass in absolute path of `web_development` to the `docker run` command and mount it to the nginx doc root.
