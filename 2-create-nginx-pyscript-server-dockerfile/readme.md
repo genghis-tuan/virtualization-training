@@ -36,7 +36,7 @@ Can we run this in the REPL: `print(f"WOO{'HOO'*3}!")`
 - Test the content copied in using `COPY`, navigate to: `localhost:8080/hello.html`
 
 - Stop and delete the container
-- Press: `ctrl d` to stop the container
+- Press: `ctrl c` to stop the container
 - `docker rm pyscript` to delete the container
 
 - Run the container detached (the container runs in the background and logs do not show in the terminal):
