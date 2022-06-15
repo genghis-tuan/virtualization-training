@@ -1,4 +1,4 @@
-# Using ARG, RUN, USER, and WORKDIR
+# Using ARG, ENV, RUN, USER, and WORKDIR
 
 ## GOALS
 
@@ -43,6 +43,8 @@ HOME=/home/jamesbond
 SHLVL=1
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 _=/usr/bin/env
+My UID: 7007
+I am: jamesbond
 
 Hello Money Penny
 ```
